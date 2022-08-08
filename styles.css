@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --orange: rgb(223, 145, 1);
+    --wining-blocks: #ffffff23;
+}
+
+body {
+    font-family: 'Rock Salt', cursive;
+    color: var(--orange);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+}
+
+h1 {
+    font-size: calc(1rem + 4vw);
+    text-transform: uppercase;
+}
+
+.gameboard {
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.box {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: calc(1rem + 3.8vw);
+    border-right: 4.5px solid;
+    border-bottom: 4.5px solid;
+}
+
+.box:nth-child(3n) {
+    border-right: none;
+}
+
+.box:nth-child(6)~.box {
+    border-bottom: none;
+}
+
+button {
+    padding: 5px 20px;
+    margin: 50px 0px;
+    border-radius: 50px;
+    background-color: #f2c14e;
+    color: black;
+    border-color: orange;
+    font-size: calc(.5rem + 2vw);
+    font-weight: bolder;
+    transition: 150ms transform, 150ms background-color, 150ms font-size;
+    font-family: 'Indie Flower', cursive;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    background-color: orange;
+    font-size: calc(.6rem + 2vw);
+}
+
+@media only screen and (max-width: 650px) {
+    .gameboard {
+        width: 300px;
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+    }
+}
